@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        function createObject(propName, propValue){
+        return {
+                [propName]: propValue,
+                print(){ 
+                    console.log(`${propName}: ${propValue}`);
+                }
+            };
+        }
+
+        const person = createObject("name", "Tom");
+        person.print();     // name: Tom
+
+        const book = createObject("title", "JavaScript Reference");
+        book.print();   // title: JavaScript Reference
+        </script>
+</body>
+</html>
