@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        function foo(){
+            var bar = "foo_bar";
+            console.log(this.bar);
+        }
+        
+        const obj1 = {bar:"obj1_bar", foo: foo};
+        const obj2 = {bar:"obj2_bar", foo: foo};
+        
+        var bar = "global_bar";
+        
+        foo();  // global_bar
+        obj1.foo();   // obj1_bar
+        obj2.foo();   // obj2_bar
+
+    </script>
+</body>
+</html>
