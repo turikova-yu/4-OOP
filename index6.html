@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+const person = {
+    name: "Tom",
+    hello(){
+        console.log("Привет");
+        let say = ()=> console.log(`Меня зовут ${this.name}`);
+        say();
+    }
+}
+person.hello();
+</body>
+</html>
