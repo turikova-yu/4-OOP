@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        const tom = { name: "Tom", age: 37};
+        const bob = Object.assign({}, tom);
+        bob.name = "Bob";
+        bob.age = 41;
+            
+        console.log(`Объект tom. Name: ${tom.name}   Age: ${tom.age}`); //Объект tom. Name: Tom   Age: 37
+        console.log(`Объект bob. Name: ${bob.name}   Age: ${bob.age}`); //Объект bob. Name: Bob   Age: 41
+    </script>
+</body>
+</html>
