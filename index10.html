@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        const user = {};
+        user.name = "Tom";
+        user.age = 26;
+        user.print = function(){
+            console.log(this.name);
+            console.log(this.age);
+        };
+        
+        const hasNameProp = "name" in user;
+        console.log(hasNameProp); // true - свойство name есть в user
+
+        const hasWeightProp = "weight" in user;
+        console.log(hasWeightProp); // false - в user нет свойства или метода под названием weight
+    </script>
+</body>
+</html>
