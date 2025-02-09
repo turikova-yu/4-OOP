@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        function Person(pName, pAge) {
+            this.name = pName;
+            this.age = pAge;
+            this.print = function(){
+                console.log(`Name: ${this.name}  Age: ${this.age}`);
+            };
+        }
+
+        const tom = new Person("Tom", 39);
+        const bob = new Person("Bob", 43);
+        const sam = new Person("Sam", 28);
+        
+        tom.print();    // Name: Tom  Age: 39
+        bob.print();    // Name: Bob  Age: 43
+        sam.print();    // Name: Sam  Age: 28
+
+        function printPersonName(person){
+            console.log(person.name);
+        }
+        
+        // массив из трех объектов Person
+        const people = [new Person("Tom", 39), new Person("Bob", 43), new Person("Sam", 28)];
+
+        for(person of people){
+            printPersonName(person);
+        }
+
+    </script>
+</body>
+</html>
