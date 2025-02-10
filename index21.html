@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        const tom = Object.create(Object.prototype, {  
+            name: {    
+                value: "Tom",
+                enumerable: true,       // доступно для перебора
+                writable: false     // НЕ доступно для записи
+            },  
+            age: { 
+                value: 39,
+                enumerable: true,       // доступно для перебора
+                writable: true      // доступно для записи
+            },  
+            print: {    
+                value: function() { console.log(`Name: ${this.name}  Age: ${this.age}`);},
+                enumerable: false,      // не доступно для перебора
+                writable: false,        // НЕ доступно для записи
+            }  
+        });
+
+        console.log(tom.name);  // Tom
+        tom.name = "Tomas";
+        console.log(tom.name);  // Tom - свойство name не доступно для изменения
+
+        console.log(tom.age);   // 39
+        tom.age = 22;
+        console.log(tom.age);   // 22 - свойство age доступно для изменения 
+
+        tom.print();            // Name: Tom  Age: 22
+
+        // перебор объекта
+        for(prop in tom){
+        console.log(prop);
+        }
+        // Консольный вывод:
+        // name
+        // age
+        
+    </script>
+</body>
+</html>
