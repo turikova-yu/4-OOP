@@ -21,11 +21,17 @@
         Person.prototype.sayHello = function(){
             console.log(this.name, "says: Hello");
         };
-        
+
         tom.print();    // Name: Tom  Age: 39
         tom.sayHello(); // Tom says: Hello
         bob.print();    // Name: Bob  Age: 43
         bob.sayHello(); // Bob says: Hello
+
+        
+        Person.prototype.company = "SuperCorp";
+        bob.company = "MegaCorp";   // определяем свойство с тем же именем на уровне одного объекта
+        console.log(bob.company);   // MegaCorp - берет свойство из объекта bob
+        console.log(tom.company);   // SuperCorp - берет свойство из прототипа Person
         
     </script>
 </body>
