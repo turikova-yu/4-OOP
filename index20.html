@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        function sum(x, y){
+            
+            return x + y;
+        }
+        const result1 = sum.call(null, 3, 8); //Метод call() вызывает функцию с указанным значением this и аргументами
+        
+        console.log(result1); // 11
+
+        const result2 = sum.apply(null, [3, 8]); //На метод call() похож метод apply(), который также вызывает функцию и в качестве первого параметра 
+                                                // также получает объект, для которого функция вызывается. 
+                                                // Только теперь в качестве второго параметра передается массив аргументов
+ 
+        console.log(result2); // 11
+        
+    </script>
+</body>
+</html>
