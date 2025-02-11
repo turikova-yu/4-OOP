@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        function Person (name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        
+        Person.prototype.print = function(){
+            console.log(`Name: ${this.name}  Age: ${this.age}`);
+        };
+
+        function Employee(name, age, comp){
+            Person.call(this, name, age);
+            this.company = comp;
+        }
+
+        Employee.prototype = Object.create(Person.prototype);
+        Employee.prototype.constructor = Employee;
+
+        // переопределяем метод print
+        Employee.prototype.print = function(){
+            Person.prototype.print.call(this); // вызываем метод print из Person
+            console.log(`Company: ${this.company}`);
+        };
+
+        const tom = new Employee("Tom", 39, "Google");
+        tom.print();    // Name: Tom  Age: 39  
+                        // Company: Google
+    </script>
+</body>
+</html>
