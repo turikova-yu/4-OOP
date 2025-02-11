@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name: "", 
+            age: 0,  
+            print: function(){ 
+                console.log(`Name: ${this.name}  Age: ${this.age}`);
+            }
+        };
+
+        const employee = Object.create(person);  // employee использует прототип объекта person
+
+        employee.name = "Tom";
+        employee.age = 39;
+        employee.company = "Google";  // новое свойство
+        
+        // новый метод
+        employee.work = function(){ 
+            console.log(`${this.name} works in ${this.company}`);
+        }
+        
+        employee.print();    // Name: Tom  Age: 39
+        employee.work();    // Tom works in Google
+        
+    </script>
+</body>
+</html>
