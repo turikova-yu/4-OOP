@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name: "", 
+            age: 0,  
+            print: function(){ 
+                console.log(`Name: ${this.name}  Age: ${this.age}`);
+            }
+        };
+        
+        // объект employee наследует прототип объекта person
+        const employee = Object.create(person);
+        employee.company = "";
+
+        // объект manager наследует прототип объекта employee
+        const manager = Object.create(employee);
+        
+        // переопределяем метод print
+        manager.print = function(){ 
+            console.log(`Name: ${this.name}  Age: ${this.age}\nManager in ${this.company}`);
+        }
+        
+        manager.name = "Bob";
+        manager.age = 43;
+        manager.company = "Microsoft";
+        manager.print();    // Name: Bob  Age: 43  
+                        // Manager in Microsoft
+        
+    </script>
+</body>
+</html>
