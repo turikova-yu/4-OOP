@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name: "", 
+            age: 0,  
+            print: function(){ 
+                console.log(`Name: ${this.name}  Age: ${this.age}`);
+            }
+        };
+        
+        // объект employee наследует прототип объекта person
+        const employee = Object.create(person);
+        employee.name = "Tom";
+        employee.age = 39;
+        employee.company = "Google";
+        
+        // переопределяем метод print
+        employee.print = function(){ 
+            this.__proto__.print.call(this);    // вызываем версию метода из person
+            // Object.getPrototypeOf(this).print.call(this);  // альтернативный вариант
+            console.log(`Company: ${this.company}`);
+        }
+
+        employee.print();   // Name: Tom  Age: 39
+                    // Company: Google
+
+    </script>
+</body>
+</html>
