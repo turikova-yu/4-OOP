@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        function User(uName, uAge) {
+            this.name = uName;
+            let _age = uAge;
+            this.print = function(){
+                console.log(`Name: ${this.name}  Age: ${_age}`);
+            };
+        }
+
+        const tom = new User("Tom", 39);
+        tom._age = 11500;
+        tom.print();    // Name: Tom  Age: 39
+    </script>
+</body>
+</html>
