@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <script>
+        const tom = {name: "Tom"};
+        Object.seal(tom);       // закрываем объект tom от расширения и изменения конфигурации
+        // для свойства name запрещаем изменение
+        Object.defineProperty(tom, "name", { writable: false});
+        tom.name = "Tomas";
+
+        // добавляем новое свойство - age
+        tom.age = 39;
+        console.log(`Name: ${tom.name}  Age: ${tom.age}`);  // Name: Tom  Age: undefined
+
+        // для свойства name разрешаем изменение
+        Object.defineProperty(tom, "name", { writable: true}); // Uncaught TypeError: Cannot redefine property: name
+
+        </script>
+</body>
+</html>
